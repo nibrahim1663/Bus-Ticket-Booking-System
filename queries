@@ -1,0 +1,128 @@
+CREATE TABLE user (
+    userid VARCHAR(20) PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    bookid VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE bus (
+    busid VARCHAR(20) PRIMARY KEY,
+    from_ VARCHAR(50) NOT NULL,
+    to_ VARCHAR(50) NOT NULL,
+    cost INT NOT NULL,
+    rating DECIMAL(3, 2) NOT NULL,
+    departure TIME NOT NULL,
+    arrival TIME NOT NULL
+);
+
+CREATE TABLE booking (
+    booking_id VARCHAR(20) PRIMARY KEY,
+    userid VARCHAR(20) NOT NULL,
+    busid VARCHAR(20) NOT NULL,
+    passengers INT NOT NULL,
+    date_ DATE NOT NULL
+);
+
+-- Insert statements for 'bus' table
+INSERT INTO bus VALUES('12345', 'Waterloo', 'Toronto', 12, 4.3, '08:00:00', '12:00:00');
+INSERT INTO bus VALUES('12346', 'Waterloo', 'Kitchener', 19, 3.3, '08:00:00', '16:00:00');
+INSERT INTO bus VALUES('12348', 'Waterloo', 'London', 12, 4.8, '08:00:00', '12:00:00');
+INSERT INTO bus VALUES('22338', 'Waterloo', 'Cambridge', 21, 4.2, '22:00:00', '12:00:00');
+
+insert into bus values('87734', 'Waterloo', 'London',  18, 3.2, '13:00:00', '23:30:00');
+insert into bus values('87634', 'Waterloo', 'Kitchener',  38, 4.6, '02:00:00', '22:30:00');
+
+insert into bus values('11756', 'Waterloo', 'London',  15, 2.4, '07:00:00', '22:30:00');
+insert into bus values('11754', 'Waterloo', 'London',  18, 3.2, '08:00:00', '18:30:00');
+insert into bus values('11632', 'Waterloo', 'London',  25, 4.6, '10:00:00', '20:00:00');
+insert into bus values('11098', 'Waterloo', 'London',  32, 4.8, '05:00:00', '14:00:00');
+insert into bus values('11704', 'Waterloo', 'London',  15, 2.4, '07:00:00', '22:30:00');
+
+insert into bus values('12056', 'Waterloo', 'Toronto',  15, 2.4, '07:00:00', '12:30:00');
+insert into bus values('12300', 'Waterloo', 'Toronto',  25, 3.6, '09:00:00', '14:30:00');
+insert into bus values('12302', 'Waterloo', 'Toronto',  35, 3.8, '10:00:00', '15:30:00');
+insert into bus values('12307', 'Waterloo', 'Toronto',  18, 4.2, '12:00:00', '17:30:00');
+insert into bus values('12321', 'Waterloo', 'Toronto',  40, 4.9, '13:00:00', '18:30:00');
+
+insert into bus values('14654', 'Waterloo', 'Kitchener',  20, 1.9, '02:00:00', '21:30:00');
+insert into bus values('14371', 'Waterloo', 'Kitchener',  40, 2.8, '04:00:00', '22:30:00');
+insert into bus values('14306', 'Waterloo', 'Kitchener',  60, 3.6, '07:00:00', '23:00:00');
+insert into bus values('14455', 'Waterloo', 'Kitchener',  65, 4.2, '11:00:00', '23:45:00');
+insert into bus values('14309', 'Waterloo', 'Kitchener',  80, 4.8, '12:00:00', '18:30:00');
+
+insert into bus values('15609', 'Waterloo', 'Cambridge',  20, 3.8, '08:00:00', '18:30:00');
+insert into bus values('15009', 'Waterloo', 'Cambridge',  50, 4.6, '12:00:00', '22:00:00');
+
+insert into bus values('21399', 'Toronto', 'Waterloo',  25, 4.2, '09:00:00', '16:00:00');
+insert into bus values('21209', 'Toronto', 'Waterloo',  72, 4.9, '13:00:00', '19:30:00');
+
+insert into bus values('22679', 'Toronto', 'Cambridge',  45, 2.8, '01:00:00', '18:30:00');
+insert into bus values('22099', 'Toronto', 'Cambridge',  67, 3.6, '12:00:00', '23:30:00');
+
+insert into bus values('23309', 'Toronto', 'Kitchener',  46, 3.4, '08:00:00', '22:30:00');
+insert into bus values('23409', 'Toronto', 'Kitchener',  90, 4.5, '13:00:00', '23:45:00');
+
+insert into bus values('24309', 'Toronto', 'London',  30, 4.3, '06:00:00', '18:45:00');
+insert into bus values('28809', 'Toronto', 'London',  70, 4.5, '13:00:00', '03:45:00');
+
+
+insert into bus values('31123', 'London', 'Waterloo',  32, 3.5, '08:00:00', '13:45:00');
+insert into bus values('31321', 'London', 'Waterloo',  78, 4.5, '13:00:00', '22:35:00');
+
+insert into bus values('32002', 'London', 'Toronto',  78, 4.5, '07:00:00', '16:00:00');
+insert into bus values('32004', 'London', 'Toronto',  98, 5.0, '17:00:00', '23:35:00');
+
+insert into bus values('33456', 'London', 'Cambridge',  98, 4.0, '06:00:00', '16:00:00');
+insert into bus values('33765', 'London', 'Cambridge', 12, 5.8, '17:00:00', '01:35:00');
+
+insert into bus values('34367', 'London', 'Kitchener', 12, 4.2, '19:00:00', '23:35:00');
+insert into bus values('34000', 'London', 'Kitchener', 14, 4.6, '21:00:00', '03:35:00');
+
+
+insert into bus values('41260', 'Cambridge', 'Kitchener', 46, 4.2, '11:00:00', '21:35:00');
+insert into bus values('41320', 'Cambridge', 'Kitchener', 67, 5.0, '11:30:00', '20:35:00');
+
+insert into bus values('42003', 'Cambridge', 'Waterloo', 43, 3.2, '09:00:00', '21:35:00');
+insert into bus values('42654', 'Cambridge', 'Waterloo', 90, 4.9, '14:00:00', '23:55:00');
+
+insert into bus values('43004', 'Cambridge', 'London', 95, 2.9, '01:00:00', '17:55:00');
+insert into bus values('03124', 'Cambridge', 'London', 112, 3.9, '16:00:00', '05:55:00');
+
+insert into bus values('44098', 'Cambridge', 'Toronto', 62, 4.2, '23:00:00', '11:55:00');
+insert into bus values('44342', 'Cambridge', 'Toronto', 102, 4.9, '17:00:00', '02:35:00');
+
+insert into bus values('51124', 'Kitchener', 'Toronto', 82, 2.6, '08:35:00', '23:55:00');
+insert into bus values('71224', 'Kitchener', 'Toronto', 92, 4.7, '16:20:00', '09:00:00');
+
+insert into bus values('52334', 'Kitchener', 'Cambridge', 40, 3.7, '08:15:00', '17:00:00');
+insert into bus values('52014', 'Kitchener', 'Cambridge', 60, 4.2, '10:00:00', '20:00:00');
+
+insert into bus values('53000', 'Kitchener', 'Waterloo', 12, 1.2, '04:30:00', '23:00:00');
+insert into bus values('53201', 'Kitchener', 'Waterloo', 14, 5.0, '09:30:00', '23:45:00');
+
+insert into bus values('54333', 'Kitchener', 'London', 13, 4.2, '01:30:00', '00:55:00');
+insert into bus values('54231', 'Kitchener', 'London', 15, 4.8, '16:30:00', '13:00:00');
+
+-- Update statements
+ALTER TABLE bus
+ADD capacity INT NOT NULL DEFAULT 60;
+
+UPDATE bus 
+SET capacity = 60 
+WHERE busid = '15009';
+
+UPDATE booking 
+SET passengers = 3, date_ = '2021-10-30' 
+WHERE booking_id = '86905';
+
+-- Select statements
+SELECT * FROM bus WHERE busid = '15009';
+SELECT * FROM user;
+SELECT * FROM booking;
+
+-- Delete statements
+DELETE FROM user;
+DELETE FROM booking;
+
+
